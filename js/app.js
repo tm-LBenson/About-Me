@@ -1,23 +1,25 @@
 'use scrict';
-//each variable is created to be falsey for the while loop
 let petsQuestion = '';
 let childQuestion = '';
 let truckQuestion = '';
 let sportsQuestion = '';
 let presQuestion = '';
-// check to see if the question is answered
+
+
+
+let usersName = prompt('What is your name?').toLowerCase().split('');
+usersName[0] = usersName[0].toUpperCase();
+usersName = usersName.join('');
+// console.log(usersName);
+alert(`Welcome to my site ${usersName}`);
+
 while(!petsQuestion){
-  // get user input through a prompt and use a method to turn input to lowercase
   petsQuestion = prompt('Do I have any pets? yes or no?').toLowerCase();
-  // check if first letter if user input is the letter y
   if (petsQuestion[0] === 'y'){
-  // console.log('Correct! I have a cat!');
     alert('Correct! I have a cat!');
-  // check if the first letter of user input is the letter n
   }else if(petsQuestion[0] === 'n'){
   // console.log('Incorrect! I have a cat!');
     alert('Incorrect! I have a cat!');
-  // if the letter 'n' or 'y' was not inputted as the first letter, reset the user answer to remain falsey
   }else{
     petsQuestion = '';
     // console.log('Invalid response');
@@ -84,3 +86,4 @@ while(!presQuestion){
     alert('Invalid response');
   }
 }
+alert(`Thanks for visiting my site ${usersName}`);
