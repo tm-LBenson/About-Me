@@ -7,12 +7,20 @@ body{
   align-items: center;
   justify-content: center;
   font-size: 1.5em;
+ 
 }
 
 h1{
   font-size: 5em;
   margin-top: .5em;
   margin-bottom: 1em;
+}
+section{
+  margin: 0 8em 0 8em;
+}
+
+ul{
+  margin-top: 5em
 }
 
 li{
