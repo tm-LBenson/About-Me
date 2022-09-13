@@ -1,6 +1,12 @@
 body{
   background-color: rgba(182, 153, 153, 0.544);
   font-family: sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
 }
 
 h1{
@@ -9,15 +15,7 @@ h1{
   margin-bottom: 1em;
 }
 
-body{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 li{
   line-height: 1.4em;
-  font-size: 1.5em;
+  
 }
