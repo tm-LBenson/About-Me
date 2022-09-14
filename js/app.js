@@ -139,4 +139,4 @@ alert('Click "OK" to view my entire Steam Library');
 alert(steamLibrary);
 
 
-alert(`Thanks for visiting my site ${usersName} your score is ${userScore}! out of 7`);
+alert(`Thanks for visiting my site ${usersName} your score is ${userScore} out of 7`);
