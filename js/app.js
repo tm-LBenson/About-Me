@@ -6,8 +6,9 @@ let sportsQuestion = '';
 let presQuestion = '';
 let userScore = 0;
 let numGameGuesses = 4;
-
+let videoGameGuesses = 6;
 let usersName = prompt('What is your name?').toLowerCase().split('');
+const steamLibrary = ['among us', 'the escapists', 'factorio','the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few' ];
 usersName[0] = usersName[0].toUpperCase();
 usersName = usersName.join('');
 // console.log(usersName);
@@ -92,7 +93,6 @@ while(!presQuestion){
   }
 }
 
-
 let gameOn = true;
 while(gameOn === true && numGameGuesses >= 0){
 
@@ -115,5 +115,28 @@ while(gameOn === true && numGameGuesses >= 0){
   }
 }
 
+gameOn = true;
+while (gameOn === true && videoGameGuesses > 0){
+  let steamGuess = prompt(`You have ${videoGameGuesses} guesses to name a game thats in my Steam Library`).toLowerCase();
+  let correctAnswer;
+  for(let i = 0; i < steamLibrary.length; i++){
+    // console.log(`compairing ${steamGuess} to ${steamLibrary[i]}`);
+    if (steamGuess === steamLibrary[i]){
+      userScore++;
+      correctAnswer = steamLibrary[i];
+      alert(`${correctAnswer} is correct!`);
+      gameOn = false;
+      break;
+    }
+  }
+  if(steamGuess !== correctAnswer){
+    videoGameGuesses--;
+    alert(`${steamGuess} is incorrect`);
+  }
+}
 
-alert(`Thanks for visiting my site ${usersName} your score is ${userScore}!`);
+alert('Click "OK" to view my entire Steam Library');
+alert(steamLibrary);
+
+
+alert(`Thanks for visiting my site ${usersName} your score is ${userScore}! out of 7`);
