@@ -4,7 +4,7 @@ let childQuestion = '';
 let truckQuestion = '';
 let sportsQuestion = '';
 let presQuestion = '';
-
+let userScore = 0;
 
 
 let usersName = prompt('What is your name?').toLowerCase().split('');
