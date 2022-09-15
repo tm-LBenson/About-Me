@@ -1,19 +1,22 @@
-'use scrict';
-let petsQuestion = '';
-let childQuestion = '';
-let truckQuestion = '';
-let sportsQuestion = '';
-let presQuestion = '';
+'use strict';
+
+//declare variables and arrays
 let userScore = 0;
 let numGameGuesses = 4;
 let videoGameGuesses = 6;
-let usersName = prompt('What is your name?').toLowerCase().split('');
-const steamLibrary = ['among us', 'the escapists', 'factorio', 'the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few'];
-usersName[0] = usersName[0].toUpperCase();
-usersName = usersName.join('');
-// console.log(usersName);
-alert(`Welcome to my site ${usersName}`);
+let usersName = '';
 
+
+const steamLibrary = ['among us', 'the escapists', 'factorio', 'the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few'];
+
+
+function greet() {
+  usersName = prompt('What is your name?').toLowerCase().split('');
+  usersName[0] = usersName[0].toUpperCase();
+  usersName = usersName.join('');
+  alert(`Welcome to my site ${usersName}`);
+  return usersName;
+}
 
 //Implementing first 5 questions as objects within an array and using a for loop
 
@@ -81,6 +84,7 @@ function firstFive() {
     let ans = prompt(fiveQuestion[i].question).toLowerCase();
     if (ans === fiveQuestion[i].right1 || ans === fiveQuestion[i].right2) {
       alert(fiveQuestion[i].correct);
+      userScore++;
     } else if (ans === fiveQuestion[i].wrong1 || ans === fiveQuestion[i].wrong2) {
       alert(fiveQuestion[i].incorrect);
     } else {
@@ -138,10 +142,12 @@ function guessGame() {
   alert(steamLibrary);
 }
 
-
+// THE INVOCATION SECTION
+greet();
 firstFive();
+numberGame();
+guessGame();
 
 
 
-
-alert(`Thanks for visiting my site ${usersName} your score is ${userScore} out of 7`);
+alert(`Thanks for visiting my site ${greet()} your score is ${userScore} out of 7`);
