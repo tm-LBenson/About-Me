@@ -9,6 +9,9 @@ let instruments = 12;
 const steamLibrary = ['among us', 'the escapists', 'factorio', 'the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'halo', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few'];
 
 const questions = [
+  /*Each Array Starts with the following format
+  [Question to ask, correct response from user, incorrect response from user, correct reply to user, incorrect reply to user] */
+
   //Question 1 and answers for question 1
   ['Do I have any pets? yes or no?','y','n', 'Correct! I have a cat!', 'Incorrect! I have a cat!'],
   //Question 2 and answers for question 2
