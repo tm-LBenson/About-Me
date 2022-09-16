@@ -6,7 +6,7 @@ let numGameGuesses = 4;
 let videoGameGuesses = 6;
 let usersName = prompt('What is your name?');
 let instruments = 12;
-const steamLibrary = ['among us', 'the escapists', 'factorio', 'the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few'];
+const steamLibrary = ['among us', 'the escapists', 'factorio', 'the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'halo', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few'];
 
 const questions = [
   //Question 1 and answers for question 1
@@ -96,21 +96,21 @@ function guessGame() {
       alert(`${steamGuess} is incorrect`);
     }
   }
-
-  alert('Click "OK" to view my entire Steam Library');
-  alert(steamLibrary);
 }
 
-// function viewSteam(steamLibrary){
-
-// }
+function viewSteam(steamLibrary){
+  /*Turn the steamLibrary into a string separated by a comma and space
+  then alert the user with the library */
+  alert('Click "OK" to view my entire Steam Library');
+  alert(steamLibrary.join(', '));
+}
 
 // THE INVOCATION SECTION
 greet(usersName);
 firstFive();
 numberGame(instruments);
 guessGame();
-// viewSteam(steamLibrary);
+viewSteam(steamLibrary);
 
 
 alert(`Thanks for visiting my site ${usersName} your score is ${userScore} out of 7`);
