@@ -5,7 +5,7 @@ let userScore = 0;
 let numGameGuesses = 4;
 let videoGameGuesses = 6;
 let usersName = '';
-
+let nameReminder = greet();
 
 const steamLibrary = ['among us', 'the escapists', 'factorio', 'the forest', 'grand thevy auto v', 'halo infinite', 'halo: the master chief collection', 'lost arc', 'microsoft flight sumulator', 'mordhau', 'new world', 'path of exile', 'project zomboid', 'rimworld', 'satisfactory', 'sea of thieves', 'subspace continuum', 'terraria', 'valheim', 'we happy few'];
 
@@ -99,7 +99,7 @@ function guessGame() {
 }
 
 // THE INVOCATION SECTION
-let nameReminder = greet();
+
 firstFive();
 numberGame();
 guessGame();
