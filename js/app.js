@@ -22,73 +22,28 @@ function greet() {
 
 let invalid = 'Invalid response!';
 
-// intitializing objects
-
-let question1 = {
-  question: 'Do I have any pets? yes or no?',
-  right1: 'yes',
-  right2: 'y',
-  correct: 'Correct! I have a cat!',
-  wrong1: 'no',
-  wrong2: 'n',
-  incorrect: 'Incorrect! In have a cat!'
-};
-
-let question2 = {
-  question: 'Do I a daughter? yes or no?',
-  right1: 'yes',
-  right2: 'y',
-  correct: 'Correct! I have a daughter!',
-  wrong1: 'no',
-  wrong2: 'n',
-  incorrect: 'Incorrect! I have a daughter!'
-};
-
-let question3 = {
-  question: 'Do I drive a truck? yes or no?',
-  right1: 'no',
-  right2: 'n',
-  correct: 'Correct! I have a car!',
-  wrong1: 'yes',
-  wrong2: 'y',
-  incorrect: 'Incorrect! I have a car!'
-};
-
-let question4 = {
-  question: 'Do I like sports? yes or no?',
-  right1: 'no',
-  right2: 'n',
-  correct: 'Correct! I have little interest with sports!',
-  wrong1: 'yes',
-  wrong2: 'y',
-  incorrect: 'Incorrect! I have little interest with sports!'
-};
-
-let question5 = {
-  question: 'Have I ever met the President of the United States yes or no?',
-  right1: 'no',
-  right2: 'n',
-  correct: 'I have never met the President!',
-  wrong1: 'yes',
-  wrong2: 'y',
-  incorrect: 'Incorrect! I have never met the President!'
-};
-
-
-// intitializing array of objects
-let fiveQuestion = [question1, question2, question3, question4, question5];
+// intitializing array of questions
+const questions = [
+  ['Do I have any pets? yes or no?','y','n', 'Correct! I have a cat!', 'Incorrect! I have a cat!'],
+  ['Do I a daughter? yes or no?','y', 'n', 'Correct! I have a daughter!','Incorrect! I have a daughter!'],
+  ['Do I drive a truck? yes or no?','n', 'y', 'Correct! I have a car!','Incorrect! I have a car!'],
+  ['Do I like sports? yes or no?','n', 'y', 'Correct! I have little interest with sports!','Incorrect! I have little interest with sports!'],
+  ['Have I ever met the President of the United States yes or no?','n', 'y','I have never met the President!','Incorrect! I have never met the President!']
+];
 
 // Creating function
 function firstFive() {
-  for (let i = 0; i < fiveQuestion.length; i++) {
-    let ans = prompt(fiveQuestion[i].question).toLowerCase();
-    if (ans === fiveQuestion[i].right1 || ans === fiveQuestion[i].right2) {
-      alert(fiveQuestion[i].correct);
+  for (let i = 0; i < questions.length; i++) {
+    let ans = prompt(questions[i][0]).toLowerCase();
+    if (ans[0] === questions[i][1]) {
+      alert(questions[i][3]);
       userScore++;
-    } else if (ans === fiveQuestion[i].wrong1 || ans === fiveQuestion[i].wrong2) {
-      alert(fiveQuestion[i].incorrect);
+    } else if (ans[0] === questions[i][2]) {
+      alert(questions[i][4]);
     } else {
       alert(invalid);
+      //reset the question due to invalid input
+      i--;
     }
   }
 }
@@ -129,6 +84,7 @@ function guessGame() {
         userScore++;
         correctAnswer = steamLibrary[i];
         alert(`${correctAnswer} is correct!`);
+        videoGameGuesses = 0;
         break;
       }
     }
@@ -143,11 +99,11 @@ function guessGame() {
 }
 
 // THE INVOCATION SECTION
-greet();
+let nameReminder = greet();
 firstFive();
 numberGame();
 guessGame();
 
 
 
-alert(`Thanks for visiting my site ${greet()} your score is ${userScore} out of 7`);
+alert(`Thanks for visiting my site ${nameReminder} your score is ${userScore} out of 7`);
